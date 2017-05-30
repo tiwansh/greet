@@ -2,10 +2,26 @@
 <html>
 <head>
 	<title>Greetings !</title>
-	<script src="popup.js">
-	</script>
+	<style>
+      #dispmap {
+        height: 100%;
+
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 20em;
+      }
+    </style>
 </head>
 <body>
+	 <script src="popup.js"></script>
+	 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVYQRo2cR0Glw9CPtkZylgTC8pHVTFn8U&callback=initMap">
+    </script>
 	<p>I will display the weather hooha!<p>
+	<div id = "dispmap">
+		
+	</div>
 </body>
 </html>
