@@ -13,7 +13,7 @@ function initMap(){
 				lng: position.coords.longitude
 			};
 			infoWindow.setPosition(pos);
-			infoWindow.setContent("Location Found!!");
+			infoWindow.setContent("You");
 			infoWindow.open(map);
 			map.setCenter(pos);
 		},
@@ -33,4 +33,23 @@ function initMap(){
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+      navigator.geolocation.getCurrentPosition(function(position){
+      	loadWeather(position.coords.latitude+','+position.coords.longitude)
+      });
   }
+
+function loadWeather(location, woeid) {
+	$.simpleWeather({
+		location: location,
+		woeid: woeid,
+		unit: 'c',
+		success: function(weather){
+			html = '<h2>'+weather.code+' '+weather.temp+'</h2>'
+			$("#temp").html(html);
+		},
+		error:function(error){
+			errMsg = '<p>Error ! Couldn\'t load weather!</p>'
+			$("#temp").html(errMsg);	
+		}
+	});
+}

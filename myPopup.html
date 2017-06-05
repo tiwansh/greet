@@ -4,21 +4,28 @@
 	<title>Greetings !</title>
 	<style>
       #dispmap {
-        height: 100%;
+        height: 40%;
       }
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
         width: 20em;
+        background-color: #44D6FA;
+      }
+      #temp{
+      	height: 10%;
       }
     </style>
-</head>
+    <script src="popup.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVYQRo2cR0Glw9CPtkZylgTC8pHVTFn8U&callback=initMap"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>
+	<script src="jquery.simpleWeather.js"></script>
+	</head>
 <body>
-	 <script src="popup.js"></script>
-	 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVYQRo2cR0Glw9CPtkZylgTC8pHVTFn8U&callback=initMap">
-    </script>
-	<p>Location detecting and weather info :)<p>
+	
+	<p style="background-color:blue;">Location detection and weather info :)<p>
 	<div id = "dispmap"></div>
+	<div id="temp"></div>
 </body>
 </html>
